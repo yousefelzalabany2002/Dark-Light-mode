@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ddd;
+    color: #333;
+    transition: .2s ease-in-out;
+    text-align: center;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #ddd;
+}
+
+h1 {
+    margin: 40px;
+}
+
+p {
+    margin: 10px 0;
+    line-height: 25px;
+    text-align: justify;
+    padding: 40px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.toggle-btn {
+    position: relative;
+    width: 140px;
+    height: 60px;
+    background: url(../images/light.jpeg) no-repeat center;
+    background-size: cover;
+    border-radius: 30px;
+    border: none;
+    transition: .4s linear;
+    cursor: pointer;
+
+}
+
+.dark-mode .toggle-btn {
+    background: url("../images/dark.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+.circle {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 22px;
+    top: 8px;
+    left: 90px;
+    transition: .4s linear;
+
+}
+
+.dark-mode .circle {
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    background-color: rgba(51, 51, 51, .6);
+}
+
+.circle::before,
+.circle::after {
+    content: "";
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    position: absolute;
+    left: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    animation: waves 1s linear infinite;
+}
+
+.dark-mode .circle::before,
+.dark-mode .circle::after {
+    border: 1px solid #333;
+}
+
+.circle::after {
+    animation-delay: .5s;
+
+}
+
+@keyframes waves {
+    to {
+        transform: scale(1.4);
+        opacity: .3;
+    }
+}
+
+.toggle-btn i {
+    font-size: 22px;
+    line-height: 44px;
+    transition: .5s linear;
+
+}
+
+.dark-mode .toggle-btn i {
+    transform: rotate(360deg);
+}
+
+.fa-sun {
+    color: #d4ac0d;
+}
+
+.fa-moon {
+    color: #eaf2f8;
+}
